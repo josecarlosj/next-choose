@@ -7,11 +7,16 @@
              x:Class="NextChoose.MainPage"
              Title="NextChoose">
     <StackLayout VerticalOptions="CenterAndExpand"
-                 HorizontalOptions="CenterAndExpand"
-                 Margin="16">
+                 HorizontalOptions="FillAndExpand"
+                 Spacing="24"
+                 Margin="32">
         <Button Text="Ver Opções"
+                HeightRequest="50"
+                CornerRadius="25"
                 Clicked="OpenAllOption_Clicked"/>
         <Button Text="Escolher"
+                HeightRequest="50"
+                CornerRadius="25"
                 Clicked="OpenChooseOptionn_Clicked"/>
     </StackLayout>
 </ContentPage>

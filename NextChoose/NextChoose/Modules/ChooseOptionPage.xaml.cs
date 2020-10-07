@@ -24,7 +24,7 @@ namespace NextChoose.Modules
             var randomObj = new Random();
             Options = OptionItemMock.GetOptionItems().OrderBy(x => randomObj.Next()).ToList();
 
-            lblSelectedOption.Text = Options[optionIndex].Title;
+            lblSelectedOption.Text = "Toque no botão abaixo.";
 
             BindingContext = this;
         }

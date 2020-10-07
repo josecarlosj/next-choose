@@ -18,11 +18,14 @@
                    HorizontalOptions="CenterAndExpand"
                    VerticalOptions="CenterAndExpand"
                    HorizontalTextAlignment="Center"
+                   LineBreakMode="WordWrap"
+                   MaxLines="2"
                    Text="{Binding SelectedOption}"/>
 
             <Button x:Name="btnChooseOption"
                     VerticalOptions="End"
-                    HorizontalOptions="CenterAndExpand"
+                    HeightRequest="50"
+                    CornerRadius="25"
                     Text="Escolher"
                     Clicked="ChooseOption_Clicked"/>
 
