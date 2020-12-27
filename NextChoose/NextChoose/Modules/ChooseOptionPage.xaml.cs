@@ -22,7 +22,7 @@ namespace NextChoose.Modules
 
             //Desordanação simples da lista
             var randomObj = new Random();
-            Options = OptionItemMock.GetOptionItems().OrderBy(x => randomObj.Next()).ToList();
+            Options = OptionItemMock.OptionItems.OrderBy(x => randomObj.Next()).ToList();
 
             lblSelectedOption.Text = "Toque no botão abaixo.";
 

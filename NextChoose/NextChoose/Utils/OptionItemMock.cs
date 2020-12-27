@@ -5,30 +5,23 @@ namespace NextChoose.Utils
 {
     public static class OptionItemMock
     {
-        public static ObservableCollection<OptionItem> GetOptionItems()
+        static ObservableCollection<OptionItem> optionItems;
+        public static ObservableCollection<OptionItem> OptionItems
+        {
+            get
+            {
+                return optionItems;
+            }
+            set
+            {
+                optionItems = value;
+            }
+        }
+
+        public static ObservableCollection<OptionItem> GetFinishedItems()
         {
             return new ObservableCollection<OptionItem>()
             {
-                new OptionItem ()
-                {
-                    Title = "Opção 01"
-                },
-                new OptionItem ()
-                {
-                    Title = "Opção 02"
-                },
-                new OptionItem ()
-                {
-                    Title = "Opção 03"
-                },
-                new OptionItem ()
-                {
-                    Title = "Opção 04"
-                },
-                new OptionItem ()
-                {
-                    Title = "Opção 05"
-                },
                 new OptionItem ()
                 {
                     Title = "Opção 06"

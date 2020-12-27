@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NextChoose.Modules.AddOptionPage"
+             Title="Adicionar Opção">
+    <ContentPage.Content>
+        <StackLayout Spacing="20"
+                     Margin="20">
+            <Entry Text="{Binding Description}"
+                   Placeholder="Descrição"/>
+            <Button Text="Adicionar"
+                    VerticalOptions="End"
+                    HeightRequest="50"
+                    CornerRadius="25"
+                    Clicked="AddOption_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
