@@ -1,6 +1,5 @@
 ﻿using System;
 using NextChoose.Models;
-using NextChoose.Utils;
 using Xamarin.Forms;
 
 namespace NextChoose.Modules
@@ -9,17 +8,17 @@ namespace NextChoose.Modules
     {
         #region Properties
 
-        string description;
-        public string Description
+        string itemTitle;
+        public string ItemTitle
         {
             get
             {
-                return description;
+                return itemTitle;
             }
             set
             {
-                description = value;
-                OnPropertyChanged(nameof(Description));
+                itemTitle = value;
+                OnPropertyChanged(nameof(ItemTitle));
             }
         }
 
@@ -33,16 +32,17 @@ namespace NextChoose.Modules
 
         async void AddOption_Clicked(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(Description))
+            if (string.IsNullOrEmpty(ItemTitle))
             {
-                await DisplayAlert("Aviso!", "O campo Descrição não pode ser vazio.", "Ok");
+                await DisplayAlert("Aviso!", "O campo Título não pode ser vazio.", "Ok");
                 return;
             }
 
-            OptionItem newOption = new OptionItem { Title = Description };
-            OptionItemMock.OptionItems.Add(newOption);
+            OptionItem newOption = new OptionItem { Title = ItemTitle };
 
-            await DisplayAlert("Adicionar Opção", $"{Description} foi adicionado(a) com sucesso.", "Ok");
+            await App.Database.SaveOptionAsync(newOption);
+
+            await DisplayAlert("Adicionar Opção", $"{ItemTitle} foi adicionado(a) com sucesso.", "Ok");
             await Navigation.PopAsync();
         }
     }

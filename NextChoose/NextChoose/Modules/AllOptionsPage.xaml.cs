@@ -1,7 +1,5 @@
 ﻿using System.Collections.ObjectModel;
-using System.Linq;
 using NextChoose.Models;
-using NextChoose.Utils;
 using Xamarin.Forms;
 
 namespace NextChoose.Modules
@@ -33,11 +31,11 @@ namespace NextChoose.Modules
             Application.Current.MainPage.Navigation.PushAsync(new AddOptionPage());
         }
 
-        protected override void OnAppearing()
+        protected override async void OnAppearing()
         {
             base.OnAppearing();
 
-            OptionItems = new ObservableCollection<OptionItem>(OptionItemMock.OptionItems.OrderBy(o => o.Title));
+            OptionItems = new ObservableCollection<OptionItem>(await App.Database.GetOptionsAsync());
         }
     }
 }

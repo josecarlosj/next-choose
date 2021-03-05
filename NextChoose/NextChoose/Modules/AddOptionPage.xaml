@@ -6,8 +6,8 @@
     <ContentPage.Content>
         <StackLayout Spacing="20"
                      Margin="20">
-            <Entry Text="{Binding Description}"
-                   Placeholder="Descrição"/>
+            <Entry Text="{Binding ItemTitle}"
+                   Placeholder="Título"/>
             <Button Text="Adicionar"
                     VerticalOptions="End"
                     HeightRequest="50"

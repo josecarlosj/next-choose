@@ -20,9 +20,7 @@ namespace NextChoose.Modules
         {
             InitializeComponent();
 
-            //Desordanação simples da lista
-            var randomObj = new Random();
-            Options = OptionItemMock.OptionItems.OrderBy(x => randomObj.Next()).ToList();
+            GetAllOptions();
 
             lblSelectedOption.Text = "Toque no botão abaixo.";
 
@@ -31,14 +29,17 @@ namespace NextChoose.Modules
 
         private void ChooseOption_Clicked(object sender, EventArgs e)
         {
-            count = 0;
-            randomEndObj = new Random().Next(40, 60);
+            if(Options != null &&  Options.Count > 0)
+            {
+                count = 0;
+                randomEndObj = new Random().Next(40, 60);
 
-            optionIndex = 0;
+                optionIndex = 0;
 
-            Device.StartTimer(TimeSpan.FromSeconds(0.05), () => OnTimerTickAsync());
+                Device.StartTimer(TimeSpan.FromSeconds(0.05), () => OnTimerTickAsync());
 
-            (sender as Button).IsEnabled = false;
+                (sender as Button).IsEnabled = false;
+            }
         }
 
         bool OnTimerTickAsync()
@@ -64,6 +65,15 @@ namespace NextChoose.Modules
             }
 
             return true;
+        }
+
+        async void GetAllOptions()
+        {
+            //Desordanação simples da lista
+            var randomObj = new Random();
+
+            List<OptionItem> auxOptions = await App.Database.GetOptionsAsync();
+            Options = auxOptions.OrderBy(x => randomObj.Next()).ToList();
         }
     }
 }
