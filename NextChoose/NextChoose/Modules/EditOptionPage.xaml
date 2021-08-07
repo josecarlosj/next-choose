@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NextChoose.Modules.EditOptionPage"
+             Title="Editar Opção">
+    <ContentPage.Content>
+        <StackLayout Spacing="20"
+                     Margin="20"
+                     VerticalOptions="FillAndExpand">
+
+            <Entry Text="{Binding SelectedOptionItem.Title}"
+                   Placeholder="Título"/>
+
+            <StackLayout Orientation="Horizontal"
+                         VerticalOptions="EndAndExpand"
+                         HorizontalOptions="FillAndExpand">
+                <Button Text="Salvar"
+                        HorizontalOptions="FillAndExpand"
+                        HeightRequest="50"
+                        CornerRadius="25"
+                        Clicked="SaveOption_Clicked"/>
+
+                <Button Text="Excluir"
+                        HorizontalOptions="FillAndExpand"
+                        HeightRequest="50"
+                        CornerRadius="25"
+                        Clicked="DeleteOption_Clicked"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
