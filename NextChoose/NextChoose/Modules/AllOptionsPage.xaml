@@ -13,6 +13,8 @@
                             HorizontalOptions="CenterAndExpand"
                             Margin="8"
                             ItemsSource="{Binding OptionItems}"
+                            SelectionMode="Single"
+                            SelectedItem="{Binding SelectedOptionItem}"
                             Grid.Row="0">
                 <CollectionView.EmptyView>
                     <Label Text="Você não possui nenhum item cadastrado."

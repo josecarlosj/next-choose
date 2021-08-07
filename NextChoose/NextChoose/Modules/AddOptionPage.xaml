@@ -5,11 +5,12 @@
              Title="Adicionar Opção">
     <ContentPage.Content>
         <StackLayout Spacing="20"
-                     Margin="20">
+                     Margin="20"
+                     VerticalOptions="FillAndExpand">
             <Entry Text="{Binding ItemTitle}"
                    Placeholder="Título"/>
             <Button Text="Adicionar"
-                    VerticalOptions="End"
+                    VerticalOptions="EndAndExpand"
                     HeightRequest="50"
                     CornerRadius="25"
                     Clicked="AddOption_Clicked"/>

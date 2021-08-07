@@ -30,6 +30,8 @@ namespace NextChoose.Modules
             BindingContext = this;
         }
 
+        #region Events
+
         async void AddOption_Clicked(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(ItemTitle))
@@ -45,5 +47,7 @@ namespace NextChoose.Modules
             await DisplayAlert("Adicionar Opção", $"{ItemTitle} foi adicionado(a) com sucesso.", "Ok");
             await Navigation.PopAsync();
         }
+
+        #endregion
     }
 }
